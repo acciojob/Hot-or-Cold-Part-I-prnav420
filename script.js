@@ -4,13 +4,13 @@ var respond = document.getElementById("respond");
 
 function guess() {
   var guessValue = Number(document.getElementById("guess").value);
-  var diff = guessValue - Number(not.value);
+  var diff = guessValue - Number(not.textContent);
 
-  if (Math.abs(diff) < Math.abs(guessValue - Number(not.value))) {
+  if (Math.abs(diff) < Math.abs(guessValue - Number(not.previousElementSibling.textContent))) {
     respond.textContent = "Getting hotter";
-  } else if (guessValue < Number(not.value)) {
+  } else if (guessValue < Number(not.textContent)) {
     respond.textContent = "guess higher";
-  } else if (guessValue > Number(not.value)) {
+  } else if (guessValue > Number(not.textContent)) {
     respond.textContent = "guess lower";
   } else {
     respond.textContent = "You got it!";
